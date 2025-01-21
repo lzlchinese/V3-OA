@@ -1,5 +1,8 @@
 <script setup>
 import { ref } from "vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 
 defineProps({
   msg: String,
@@ -7,27 +10,39 @@ defineProps({
 });
 
 const count = ref(0);
+
+function goToPortal() {
+  router.push("/Portal");
+}
 </script>
 
 <template>
-  <div class="login-content">
-    <h1 class="title">{{ title }}</h1>
-    <div class="username">
-      <div class="username-icon icon"></div>
-      <Input class="username-input" placeholder="用户" />
+  <div class="login">
+    <div class="login-content">
+      <h1 class="title">{{ title }}</h1>
+      <div class="username">
+        <div class="username-icon icon"></div>
+        <Input class="username-input" placeholder="用户" />
+      </div>
+      <div class="password">
+        <div class="password-icon icon"></div>
+        <Input class="username-input" placeholder="密码" />
+      </div>
+      <Button class="login-button" @click="goToPortal">登录</Button>
     </div>
-    <div class="password">
-      <div class="password-icon icon"></div>
-      <Input class="username-input" placeholder="密码" />
-    </div>
-    <Button class="login-button">登录</Button>
   </div>
 </template>
 
 <style scoped>
+.login {
+  background: url("./src/images/background.jpg") no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
 .login-content {
   max-width: 1200px;
-  /* margin: 0 auto; */
   position: relative;
   top: 50%;
   left: 50%;
