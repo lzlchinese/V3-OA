@@ -31,17 +31,106 @@ const app = createApp(App);
 app.use(ElementPlus);
 ```
 
+## 安装 router
+
+1. 安装 vue-router
+
+```bash
+  npm install vue-router
+```
+
+2. 配置 router
+
+```javascript
+import { createRouter, createWebHistory } from "vue-router";
+
+// 导入组件
+import Home from "../components/Home.vue";
+import About from "../components/About.vue";
+
+// 配置路由
+const routes = [
+  {
+    path: "/",
+    name: "Home",
+    component: Home,
+  },
+  {
+    path: "/about",
+    name: "About",
+    component: About,
+  },
+];
+
+// 创建路由实例
+const router = createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL), // 使用 HTML5 History 模式
+  routes,
+});
+
+export default router;
+```
+
+3. 在 main.js 中挂载路由
+
+```javascript
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router"; // 引入路由配置
+
+const app = createApp(App);
+
+// 使用路由
+app.use(router);
+
+app.mount("#app");
+```
+
+4. 在 App.vue 中加上 <router-view>
+
+```javascript
+<template>
+  <div>
+    <router-view></router-view> <!-- 这里会显示相应的组件 -->
+  </div>
+</template>
+```
+
+5. 跳转路由
+
+```javascript
+<script setup>
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+function goToAbout() {
+  router.push('/about');
+}
+</script>
+```
+
 ## 知识点
 
 1. 父子传值
 
-```text
-  父传子
-  父组件App.vue
-  <Login title="xxx" />
-  子组件Login.vue
-  defineProps({
-    title: String,
-  });
-  <h1>{{ title }}</h1>
+父传子
+
+父组件 App.vue
+
+```javascript
+<Login title="xxx" />;
+defineProps({
+  title: String,
+});
+<h1>{{ title }}</h1>;
+```
+
+子组件 Login.vue
+
+```javascript
+defineProps({
+  title: String,
+});
+<h1>{{ title }}</h1>;
 ```
