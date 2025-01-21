@@ -10,4 +10,4 @@ const app = createApp(App)
 
 // 使用 Element Plus
 app.use(ElementPlus)
-createApp(App).mount('#app')
+app.mount('#app')

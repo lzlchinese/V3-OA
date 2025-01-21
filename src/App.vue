@@ -4,7 +4,7 @@ import Login from "./components/Login.vue";
 
 <template>
   <div class="login-body">
-    <el-button type="primary">登录</el-button>
+    <Login title="富士通（南京）软件技术有限公司" />
   </div>
 </template>
 
@@ -14,5 +14,6 @@ import Login from "./components/Login.vue";
   height: 100%;
   background: url("./src/images/background.jpg") no-repeat;
   background-size: 100% 100%;
+  overflow: hidden;
 }
 </style>
