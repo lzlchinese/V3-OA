@@ -5,10 +5,6 @@ import Portal from "./components/Portal.vue";
 
 <template>
   <div class="login-body">
-    <!-- <Login title="富士通（南京）软件技术有限公司" /> -->
-    <!-- <router-view></router-view> -->
-    <!-- <router-link to="/"><Login /></router-link>
-    <router-link to="/Portal"><Portal /></router-link> -->
     <Login v-if="$route.path === '/'" />
     <Portal v-else />
   </div>
