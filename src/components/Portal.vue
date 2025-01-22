@@ -12,14 +12,12 @@
         <el-menu-item index="0">
           <div>e-cology | 前端用户中心</div>
         </el-menu-item>
-        <el-menu-item index="/Page1">门户</el-menu-item>
-        <el-menu-item index="/Page2">流程</el-menu-item>
-        <el-menu-item index="3">人事</el-menu-item>
-        <el-menu-item index="4">知识</el-menu-item>
-        <el-menu-item index="5">调查</el-menu-item>
-        <el-menu-item index="6">基础</el-menu-item>
-        <el-menu-item index="7">法务</el-menu-item>
-        <el-menu-item index="8">微搜</el-menu-item>
+        <el-menu-item index="/CompanyPortal">门户</el-menu-item>
+        <el-menu-item index="/NewProcess">流程</el-menu-item>
+        <el-menu-item index="/MyCard">人事</el-menu-item>
+        <el-menu-item index="/MyDocuments">文档</el-menu-item>
+        <el-menu-item index="/MyProjects">项目</el-menu-item>
+        <el-menu-item index="/Search">微搜</el-menu-item>
       </el-menu>
     </el-aside>
   </el-container>
@@ -30,11 +28,7 @@
 
 <script lang="ts" setup>
 import { ref } from "vue";
-import { useRoute } from "vue-router";
-
-const route = useRoute();
-
-const activeIndex = ref("/Page1");
+const activeIndex = ref("/CompanyPortal");
 const handleSelect = (key: string, keyPath: string[]) => {
   console.log(key, keyPath);
 };
@@ -54,5 +48,10 @@ const handleSelect = (key: string, keyPath: string[]) => {
 }
 .el-menu-demo {
   background: rgb(0, 112, 193);
+}
+.el-main {
+  padding: 0 !important;
+  width: 100%;
+  height: calc(100% - 60px);
 }
 </style>
