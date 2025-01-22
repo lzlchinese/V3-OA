@@ -112,16 +112,16 @@ function goToAbout() {
 
 6. 导航栏路由跳转
 
-注意，在App.vue中的router-view就不能在这边使用了，这边修改成
+注意，在 App.vue 中的 router-view 就不能在这边使用了，这边修改成
 
 ```javascript
-  <div class="login-body">
-    <Login v-if="$route.path === '/'" />
-    <Portal v-else />
-  </div>
+<div class="login-body">
+  <Login v-if="$route.path === '/'" />
+  <Home v-else />
+</div>
 ```
 
-然后在Portal页面使用element组件el-menu和router-view
+然后在 Portal 页面使用 element 组件 el-menu 和 router-view
 
 ```text
 <script lang="ts" setup>

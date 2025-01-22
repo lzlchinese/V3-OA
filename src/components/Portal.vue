@@ -1,57 +1,54 @@
-<template>
-  <el-container>
-    <el-aside width="100%">
-      <el-menu
-        :default-active="activeIndex"
-        class="el-menu-demo"
-        mode="horizontal"
-        router
-        :ellipsis="false"
-        @select="handleSelect"
-      >
-        <el-menu-item index="0">
-          <div>管理员 | 刘忠磊</div>
-        </el-menu-item>
-        <el-menu-item index="/Portal2">门户</el-menu-item>
-        <el-menu-item index="/Process">流程</el-menu-item>
-        <el-menu-item index="/Personnel">人事</el-menu-item>
-        <el-menu-item index="/Documents">文档</el-menu-item>
-        <el-menu-item index="/Projects">项目</el-menu-item>
-        <el-menu-item index="/Search">微搜</el-menu-item>
-      </el-menu>
-    </el-aside>
-  </el-container>
-  <el-main>
-    <router-view></router-view>
-  </el-main>
-</template>
-
-<script lang="ts" setup>
+<script setup>
 import { ref } from "vue";
-const activeIndex = ref("/Portal2");
-const handleSelect = (key: string, keyPath: string[]) => {
+import { useRouter } from "vue-router";
+const handleOpen = (key, keyPath) => {
   console.log(key, keyPath);
 };
+const handleClose = (key, keyPath) => {
+  console.log(key, keyPath);
+};
+
+const router = useRouter();
+
+defineProps({});
+
 </script>
 
-<style>
-.el-menu--horizontal > .el-menu-item {
-  color: #fff;
-}
-/* .el-menu--horizontal > .el-menu-item:focus {
-} */
-.el-menu--horizontal > .el-menu-item:nth-child(1) {
-  /* margin-right: auto; */
-  background: rgb(0, 141, 246);
-  font-size: 15px;
-  color: #fff;
-}
-.el-menu-demo {
-  background: rgb(0, 112, 193);
-}
-.el-main {
-  padding: 0 !important;
-  width: 100%;
-  height: calc(100% - 60px);
+<template>
+  <el-row class="tac">
+    <el-col :span="3">
+      <el-menu
+        active-text-color="#ffd04b"
+        background-color="#545c64"
+        class="el-menu-vertical-demo"
+        default-active="/CompanyPortal"
+        text-color="#fff"
+        @open="handleOpen"
+        @close="handleClose"
+        router
+      >
+        <el-menu-item index="/CompanyPortal">
+          <span>公司门户</span>
+        </el-menu-item>
+        <el-menu-item index="/ServiceGuide">
+          <span>服务作业指南</span>
+        </el-menu-item>
+        <el-menu-item index="/ITGuide">
+          <span>IT指导指南</span>
+        </el-menu-item>
+      </el-menu>
+    </el-col>
+    <el-col :span="21">
+      <el-main>
+        <router-view></router-view>
+      </el-main>
+    </el-col>
+  </el-row>
+</template>
+
+<style scoped>
+.tac,
+.el-menu {
+  height: 100%;
 }
 </style>

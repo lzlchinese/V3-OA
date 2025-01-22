@@ -6,10 +6,8 @@ const router = useRouter();
 
 defineProps({});
 
-const count = ref(0);
-
 function goToPortal() {
-  router.push("/Portal");
+  router.push("/Home");
 }
 </script>
 
