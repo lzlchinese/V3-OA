@@ -2,9 +2,12 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Login from '../src/components/Login.vue';
 import Portal from '../src/components/Portal.vue';
-import Page1 from '../src/components/Page1.vue';
-import Page2 from '../src/components/Page2.vue';
-
+import CompanyPortal from '../src/components/CompanyPortal.vue';
+import NewProcess from '../src/components/NewProcess.vue';
+import MyCard from '../src/components/MyCard.vue';
+import MyDocuments from '../src/components/MyDocuments.vue';
+import MyProjects from '../src/components/MyProjects.vue';
+import Search from '../src/components/Search.vue';
 const routes = [
   {
     path: '/',
@@ -15,17 +18,33 @@ const routes = [
     path: '/Portal',
     name: 'Portal',
     component: Portal,
-  },
-  {
-    path: '/Page1',
-    name: 'Page1',
-    component: Page1,
-  },
-  {
-    path: '/Page2',
-    name: 'Page2',
-    component: Page2,
-  },
+    children: [
+      {
+        path: '/CompanyPortal',
+        component: CompanyPortal,  // 子页面
+      },
+      {
+        path: '/NewProcess',
+        component: NewProcess,  // 子页面
+      },
+      {
+        path: '/MyCard',
+        component: MyCard,
+      },
+      {
+        path: '/MyDocuments',
+        component: MyDocuments,
+      },{
+        path: '/MyProjects',
+        component: MyProjects,
+      },
+      {
+        path: '/Search',
+        component: Search,
+      }
+
+    ],
+  }
 ];
 
 const router = createRouter({

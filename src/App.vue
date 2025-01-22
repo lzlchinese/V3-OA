@@ -5,8 +5,9 @@ import Portal from "./components/Portal.vue";
 
 <template>
   <div class="login-body">
-    <Login v-if="$route.path === '/'" />
-    <Portal v-else />
+    <!-- <Login v-if="$route.path === '/'" />
+    <Portal v-else /> -->
+    <router-view />
   </div>
 </template>
 
