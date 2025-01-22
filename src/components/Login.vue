@@ -4,10 +4,7 @@ import { useRouter } from "vue-router";
 
 const router = useRouter();
 
-defineProps({
-  msg: String,
-  title: String,
-});
+defineProps({});
 
 const count = ref(0);
 
@@ -19,7 +16,7 @@ function goToPortal() {
 <template>
   <div class="login">
     <div class="login-content">
-      <h1 class="title">{{ title }}</h1>
+      <h1 class="title">{{ "富士通（南京）软件技术有限公司" }}</h1>
       <div class="username">
         <div class="username-icon icon"></div>
         <Input class="username-input" placeholder="用户" />
