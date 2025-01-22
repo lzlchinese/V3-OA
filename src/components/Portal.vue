@@ -10,13 +10,13 @@
         @select="handleSelect"
       >
         <el-menu-item index="0">
-          <div>e-cology | 前端用户中心</div>
+          <div>管理员 | 刘忠磊</div>
         </el-menu-item>
-        <el-menu-item index="/CompanyPortal">门户</el-menu-item>
-        <el-menu-item index="/NewProcess">流程</el-menu-item>
-        <el-menu-item index="/MyCard">人事</el-menu-item>
-        <el-menu-item index="/MyDocuments">文档</el-menu-item>
-        <el-menu-item index="/MyProjects">项目</el-menu-item>
+        <el-menu-item index="/Portal2">门户</el-menu-item>
+        <el-menu-item index="/Process">流程</el-menu-item>
+        <el-menu-item index="/Personnel">人事</el-menu-item>
+        <el-menu-item index="/Documents">文档</el-menu-item>
+        <el-menu-item index="/Projects">项目</el-menu-item>
         <el-menu-item index="/Search">微搜</el-menu-item>
       </el-menu>
     </el-aside>
@@ -28,7 +28,7 @@
 
 <script lang="ts" setup>
 import { ref } from "vue";
-const activeIndex = ref("/CompanyPortal");
+const activeIndex = ref("/Portal2");
 const handleSelect = (key: string, keyPath: string[]) => {
   console.log(key, keyPath);
 };

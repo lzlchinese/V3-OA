@@ -8,6 +8,6 @@ defineProps({});
 const count = ref(0);
 </script>
 
-<template>111111111</template>
+<template>我是我的工资</template>
 
 <style scoped></style>
