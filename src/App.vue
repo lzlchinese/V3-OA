@@ -1,11 +1,12 @@
 <script setup>
 import Login from "./components/Login.vue";
+import Portal from "./components/Portal.vue";
 </script>
 
 <template>
   <div class="login-body">
-    <!-- <Login title="富士通（南京）软件技术有限公司" /> -->
-    <router-view></router-view> <!-- 这里会显示相应的组件 -->
+    <Login v-if="$route.path === '/'" />
+    <Portal v-else />
   </div>
 </template>
 
