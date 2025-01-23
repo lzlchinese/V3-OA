@@ -1,12 +1,12 @@
 <script setup>
 import Login from "./components/Login.vue";
-import Portal from "./components/Portal.vue";
+import Home from "./components/Home.vue";
 </script>
 
 <template>
   <div class="login-body">
     <!-- <Login v-if="$route.path === '/'" />
-    <Portal v-else /> -->
+    <Home v-else /> -->
     <router-view />
   </div>
 </template>

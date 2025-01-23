@@ -1,8 +1,8 @@
 // router/index.js
 import { createRouter, createWebHistory } from "vue-router";
 import Login from "../src/components/Login.vue";
+import Home from "../src/components/Home.vue";
 import Portal from "../src/components/Portal.vue";
-import Portal2 from "../src/components/Portal2.vue";
 import Process from "../src/components/Process.vue";
 import Personnel from "../src/components/Personnel.vue";
 import Documents from "../src/components/Documents.vue";
@@ -14,7 +14,6 @@ import CompanyPortal from "../src/components/CompanyPortal.vue";
 import NewProcess from "../src/components/NewProcess.vue";
 import ToDoProcess from "../src/components/ToDoProcess.vue";
 import CompletedProcess from "../src/components/CompletedProcess.vue";
-
 import MyCard from "../src/components/MyCard.vue";
 import MySalary from "../src/components/MySalary.vue";
 import MyAttendance from "../src/components/MyAttendance.vue";
@@ -31,13 +30,15 @@ const routes = [
     component: Login,
   },
   {
-    path: "/Portal",
-    name: "Portal",
-    component: Portal,
+    path: "/Home",
+    name: "Home",
+    component: Home,
+    redirect: '/CompanyPortal',
     children: [
       {
-        path: "/Portal2",
-        component: Portal2, // 子页面
+        path: "/Portal",
+        component: Portal,
+        redirect: '/CompanyPortal',
         children: [
           {
             path: "/CompanyPortal",
@@ -56,6 +57,7 @@ const routes = [
       {
         path: "/Process",
         component: Process,
+        redirect: '/NewProcess',
         children: [
           {
             path: "/NewProcess",
@@ -68,6 +70,7 @@ const routes = [
       {
         path: "/Personnel",
         component: Personnel,
+        redirect: '/MyCard',
         children: [
           {
             path: "/MyCard",
@@ -80,6 +83,7 @@ const routes = [
       {
         path: "/Documents",
         component: Documents,
+        redirect: '/MyDocuments',
         children: [
           {
             path: "/MyDocuments",
@@ -92,6 +96,7 @@ const routes = [
       {
         path: "/Projects",
         component: Projects,
+        redirect: '/MyProjects',
         children: [
           { path: "/MyProjects", component: MyProjects },
           { path: "/ProjectManagement", component: ProjectManagement },
