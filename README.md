@@ -110,48 +110,6 @@ function goToAbout() {
 </script>
 ```
 
-6. 导航栏路由跳转
-
-注意，在 App.vue 中的 router-view 就不能在这边使用了，这边修改成
-
-```javascript
-<div class="login-body">
-  <Login v-if="$route.path === '/'" />
-  <Home v-else />
-</div>
-```
-
-然后在 Portal 页面使用 element 组件 el-menu 和 router-view
-
-```text
-<script lang="ts" setup>
-import { useRoute } from "vue-router";
-
-const route = useRoute();
-const activeIndex = ref("/Page1");
-<script />
-
-<template>
-  <el-container>
-    <el-aside width="100%">
-      <el-menu
-        :default-active="activeIndex"
-        class="el-menu-demo"
-        mode="horizontal"
-        router
-        :ellipsis="false"
-      >
-        <el-menu-item index="/Page1">Page1</el-menu-item>
-        <el-menu-item index="/Page2">Page2</el-menu-item>
-      </el-menu>
-    </el-aside>
-  </el-container>
-  <el-main>
-    <router-view></router-view>
-  </el-main>
-</template>
-```
-
 ## 知识点
 
 1. 父子传值
@@ -175,4 +133,14 @@ defineProps({
   title: String,
 });
 <h1>{{ title }}</h1>;
+```
+
+2. 路由跳转
+
+```javascript
+import { useRouter, useRoute } from "vue-router";
+const router = useRouter();
+const route = useRoute();
+router.push(path) // 可以进行路由跳转
+route.path // 获取当前路由path
 ```

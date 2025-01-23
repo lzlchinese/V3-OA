@@ -31,7 +31,6 @@ import { useRouter, useRoute } from "vue-router";
 
 const router = useRouter();
 const route = useRoute();
-console.log(111111111111, route.path);
 // const handleSelect = (key: string, keyPath: string[]) => {
 //   console.log(key, keyPath);
 // };
