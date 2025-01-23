@@ -2,26 +2,38 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Login from "../src/components/Login.vue";
 import Home from "../src/components/Home.vue";
-import Portal from "../src/components/Portal.vue";
-import Process from "../src/components/Process.vue";
-import Personnel from "../src/components/Personnel.vue";
-import Documents from "../src/components/Documents.vue";
-import Projects from "../src/components/Projects.vue";
-import Search from "../src/components/Search.vue";
-import ServiceGuide from "../src/components/ServiceGuide.vue";
-import ITGuide from "../src/components/ITGuide.vue";
-import CompanyPortal from "../src/components/CompanyPortal.vue";
-import NewProcess from "../src/components/NewProcess.vue";
-import ToDoProcess from "../src/components/ToDoProcess.vue";
-import CompletedProcess from "../src/components/CompletedProcess.vue";
-import MyCard from "../src/components/MyCard.vue";
-import MySalary from "../src/components/MySalary.vue";
-import MyAttendance from "../src/components/MyAttendance.vue";
-import MyDocuments from "../src/components/MyDocuments.vue";
-import MyInvestigation from "../src/components/MyInvestigation.vue";
-import DocumentRecycleBin from "../src/components/DocumentRecycleBin.vue";
-import MyProjects from "../src/components/MyProjects.vue";
-import ProjectManagement from "../src/components/ProjectManagement.vue";
+
+// Portal
+import Portal from "../src/components/Portal/Portal.vue";
+import CompanyPortal from "../src/components/Portal/CompanyPortal.vue";
+import ServiceGuide from "../src/components/Portal/ServiceGuide.vue";
+import ITGuide from "../src/components/Portal/ITGuide.vue";
+
+// Process
+import Process from "../src/components/Process/Process.vue";
+import NewProcess from "../src/components/Process/NewProcess.vue";
+import ToDoProcess from "../src/components/Process/ToDoProcess.vue";
+import CompletedProcess from "../src/components/Process/CompletedProcess.vue";
+
+// Personnel
+import Personnel from "../src/components/Personnel/Personnel.vue";
+import MyCard from "../src/components/Personnel/MyCard.vue";
+import MySalary from "../src/components/Personnel/MySalary.vue";
+import MyAttendance from "../src/components/Personnel/MyAttendance.vue";
+
+// Documents
+import Documents from "../src/components/Documents/Documents.vue";
+import MyDocuments from "../src/components/Documents/MyDocuments.vue";
+import MyInvestigation from "../src/components/Documents/MyInvestigation.vue";
+import DocumentRecycleBin from "../src/components/Documents/DocumentRecycleBin.vue";
+
+// Projects
+import Projects from "../src/components/Projects/Projects.vue";
+import MyProjects from "../src/components/Projects/MyProjects.vue";
+import ProjectManagement from "../src/components/Projects/ProjectManagement.vue";
+
+// Search
+import Search from "../src/components/Search/Search.vue";
 
 const routes = [
   {
