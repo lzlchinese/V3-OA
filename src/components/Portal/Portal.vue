@@ -11,7 +11,6 @@ const handleClose = (key, keyPath) => {
 const router = useRouter();
 
 defineProps({});
-
 </script>
 
 <template>
@@ -20,7 +19,7 @@ defineProps({});
       <el-menu
         active-text-color="#ffd04b"
         background-color="#545c64"
-        class="el-menu-vertical-demo"
+        class="el-menu-vertical"
         default-active="/CompanyPortal"
         text-color="#fff"
         @open="handleOpen"
