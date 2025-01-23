@@ -62,6 +62,7 @@ const route = useRoute();
   background: rgb(0, 141, 246);
   font-size: 15px;
   color: #fff;
+  width: 200px;
 }
 .el-menu-demo {
   background: rgb(0, 112, 193);
@@ -69,6 +70,6 @@ const route = useRoute();
 .el-main {
   padding: 0 !important;
   width: 100%;
-  height: calc(100% - 60px);
+  height: calc(100vh - 60px);
 }
 </style>

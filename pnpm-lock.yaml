@@ -8,12 +8,18 @@ importers:
 
   .:
     dependencies:
+      echarts:
+        specifier: ^5.6.0
+        version: 5.6.0
       element-plus:
         specifier: ^2.9.3
         version: 2.9.3(vue@3.5.13)
       vue:
         specifier: ^3.5.13
         version: 3.5.13
+      vue-echarts:
+        specifier: ^7.0.3
+        version: 7.0.3(@vue/runtime-core@3.5.13)(echarts@5.6.0)(vue@3.5.13)
       vue-router:
         specifier: ^4.0.13
         version: 4.0.13(vue@3.5.13)
@@ -382,6 +388,9 @@ packages:
   dayjs@1.11.13:
     resolution: {integrity: sha512-oaMBel6gjolK862uaPQOVTA7q3TZhuSvuMQAAglQDOWYO9A91IrAOUJEyKVlqJlHE0vq5p5UXxzdPfMH/x6xNg==}
 
+  echarts@5.6.0:
+    resolution: {integrity: sha512-oTbVTsXfKuEhxftHqL5xprgLoc0k7uScAwtryCgWF6hPYFLRwOUHiFmHGCBKP5NPFNkDVopOieyUqYGH8Fa3kA==}
+
   element-plus@2.9.3:
     resolution: {integrity: sha512-6tSLp5XytDS4TMZ0P3aGZnr7MXTagfNycepNfIDitd9IgwM9y01+Ssu6mglNi8RiXYhek6LBWNOd/cvpIO12+w==}
     peerDependencies:
@@ -450,6 +459,9 @@ packages:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
     engines: {node: '>=0.10.0'}
 
+  tslib@2.3.0:
+    resolution: {integrity: sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==}
+
   vite@6.0.10:
     resolution: {integrity: sha512-MEszunEcMo6pFsfXN1GhCFQqnE25tWRH0MA4f0Q7uanACi4y1Us+ZGpTMnITwCTnYzB2b9cpmnelTlxgTBmaBA==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
@@ -490,6 +502,17 @@ packages:
       yaml:
         optional: true
 
+  vue-demi@0.13.11:
+    resolution: {integrity: sha512-IR8HoEEGM65YY3ZJYAjMlKygDQn25D5ajNFNoKh9RSDMQtlzCxtfQjdQgv9jjK+m3377SsJXY8ysq8kLCZL25A==}
+    engines: {node: '>=12'}
+    hasBin: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+
   vue-demi@0.14.10:
     resolution: {integrity: sha512-nMZBOwuzabUO0nLgIcc6rycZEebF6eeUfaiQx9+WSk8e29IbLvPU9feI6tqW4kTo3hvoYAJkMh8n8D0fuISphg==}
     engines: {node: '>=12'}
@@ -499,6 +522,16 @@ packages:
       vue: ^3.0.0-0 || ^2.6.0
     peerDependenciesMeta:
       '@vue/composition-api':
+        optional: true
+
+  vue-echarts@7.0.3:
+    resolution: {integrity: sha512-/jSxNwOsw5+dYAUcwSfkLwKPuzTQ0Cepz1LxCOpj2QcHrrmUa/Ql0eQqMmc1rTPQVrh2JQ29n2dhq75ZcHvRDw==}
+    peerDependencies:
+      '@vue/runtime-core': ^3.0.0
+      echarts: ^5.5.1
+      vue: ^2.7.0 || ^3.1.1
+    peerDependenciesMeta:
+      '@vue/runtime-core':
         optional: true
 
   vue-router@4.0.13:
@@ -513,6 +546,9 @@ packages:
     peerDependenciesMeta:
       typescript:
         optional: true
+
+  zrender@5.6.1:
+    resolution: {integrity: sha512-OFXkDJKcrlx5su2XbzJvj/34Q3m6PvyCZkVPHGYpcCJ52ek4U/ymZyfuV1nKE23AyBJ51E/6Yr0mhZ7xGTO4ag==}
 
 snapshots:
 
@@ -778,6 +814,11 @@ snapshots:
 
   dayjs@1.11.13: {}
 
+  echarts@5.6.0:
+    dependencies:
+      tslib: 2.3.0
+      zrender: 5.6.1
+
   element-plus@2.9.3(vue@3.5.13):
     dependencies:
       '@ctrl/tinycolor': 3.6.1
@@ -891,6 +932,8 @@ snapshots:
 
   source-map-js@1.2.1: {}
 
+  tslib@2.3.0: {}
+
   vite@6.0.10:
     dependencies:
       esbuild: 0.24.2
@@ -899,9 +942,23 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
+  vue-demi@0.13.11(vue@3.5.13):
+    dependencies:
+      vue: 3.5.13
+
   vue-demi@0.14.10(vue@3.5.13):
     dependencies:
       vue: 3.5.13
+
+  vue-echarts@7.0.3(@vue/runtime-core@3.5.13)(echarts@5.6.0)(vue@3.5.13):
+    dependencies:
+      echarts: 5.6.0
+      vue: 3.5.13
+      vue-demi: 0.13.11(vue@3.5.13)
+    optionalDependencies:
+      '@vue/runtime-core': 3.5.13
+    transitivePeerDependencies:
+      - '@vue/composition-api'
 
   vue-router@4.0.13(vue@3.5.13):
     dependencies:
@@ -915,3 +972,7 @@ snapshots:
       '@vue/runtime-dom': 3.5.13
       '@vue/server-renderer': 3.5.13(vue@3.5.13)
       '@vue/shared': 3.5.13
+
+  zrender@5.6.1:
+    dependencies:
+      tslib: 2.3.0
