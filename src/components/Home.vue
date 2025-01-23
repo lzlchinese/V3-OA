@@ -2,11 +2,10 @@
   <el-container>
     <el-aside width="100%">
       <el-menu
+        router
         default-active="/Portal"
         class="el-menu-demo"
         mode="horizontal"
-        router
-        :ellipsis="false"
       >
         <el-menu-item>
           <div>管理员 | 刘忠磊</div>
@@ -26,11 +25,31 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
+import { ref, watch } from "vue";
 const activeIndex = ref("/Portal");
+import { useRouter, useRoute } from "vue-router";
+
+const router = useRouter();
+const route = useRoute();
+console.log(111111111111, route.path);
 // const handleSelect = (key: string, keyPath: string[]) => {
 //   console.log(key, keyPath);
 // };
+//  let showDom = ref(true);
+//  watch(
+//    () => route.path,
+//    () => {
+//      showDom.value = false;
+//      console.log(222222222, route.path)
+//      // 在dom更新之后进行渲染
+//     //  nextTick().then(function () {
+//     //    showDom.value = true;
+//     //  });
+//    }
+//  );
+// watch(()=> '', ()=>{
+
+// })
 </script>
 
 <style>

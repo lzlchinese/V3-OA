@@ -33,11 +33,12 @@ const routes = [
     path: "/Home",
     name: "Home",
     component: Home,
+    redirect: '/CompanyPortal',
     children: [
       {
         path: "/Portal",
         component: Portal,
-        // redirect: '/CompanyPortal',
+        redirect: '/CompanyPortal',
         children: [
           {
             path: "/CompanyPortal",
@@ -56,6 +57,7 @@ const routes = [
       {
         path: "/Process",
         component: Process,
+        redirect: '/NewProcess',
         children: [
           {
             path: "/NewProcess",
@@ -68,6 +70,7 @@ const routes = [
       {
         path: "/Personnel",
         component: Personnel,
+        redirect: '/MyCard',
         children: [
           {
             path: "/MyCard",
@@ -80,6 +83,7 @@ const routes = [
       {
         path: "/Documents",
         component: Documents,
+        redirect: '/MyDocuments',
         children: [
           {
             path: "/MyDocuments",
@@ -92,6 +96,7 @@ const routes = [
       {
         path: "/Projects",
         component: Projects,
+        redirect: '/MyProjects',
         children: [
           { path: "/MyProjects", component: MyProjects },
           { path: "/ProjectManagement", component: ProjectManagement },
