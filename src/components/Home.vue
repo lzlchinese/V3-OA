@@ -16,7 +16,11 @@
         <el-menu-item index="/Documents">文档</el-menu-item>
         <el-menu-item index="/Projects">项目</el-menu-item>
         <el-menu-item index="/Search">微搜</el-menu-item>
+        <el-menu-item @click="logout"
+          ><img src="../images/logout_wev8.png" alt=""
+        /></el-menu-item>
       </el-menu>
+      <div></div>
     </el-aside>
   </el-container>
   <el-main>
@@ -31,41 +35,39 @@ import { useRouter, useRoute } from "vue-router";
 
 const router = useRouter();
 const route = useRoute();
-// const handleSelect = (key: string, keyPath: string[]) => {
-//   console.log(key, keyPath);
-// };
-//  let showDom = ref(true);
-//  watch(
-//    () => route.path,
-//    () => {
-//      showDom.value = false;
-//      console.log(222222222, route.path)
-//      // 在dom更新之后进行渲染
-//     //  nextTick().then(function () {
-//     //    showDom.value = true;
-//     //  });
-//    }
-//  );
-// watch(()=> '', ()=>{
 
-// })
+function logout() {
+  router.push("/");
+}
 </script>
 
 <style>
 .el-menu--horizontal > .el-menu-item {
   color: #fff;
 }
-/* .el-menu--horizontal > .el-menu-item:focus {
-} */
 .el-menu--horizontal > .el-menu-item:nth-child(1) {
-  /* margin-right: auto; */
   background: rgb(0, 141, 246);
   font-size: 15px;
   color: #fff;
   width: 200px;
 }
+.el-menu--horizontal > .el-menu-item:last-child {
+  position: absolute;
+  right: 25px;
+  top: 0;
+}
 .el-menu-demo {
-  background: rgb(0, 112, 193);
+  background: rgb(0, 112, 193) !important;
+}
+.el-menu-demo .el-menu-item {
+  color: #a4cceb !important;
+}
+::v-deep .el-menu-demo .el-menu-item.is-active {
+  color: #fff !important;
+}
+.el-menu-demo .el-menu-item:hover {
+  color: #fff !important;
+  background-color: rgb(0, 112, 193) !important;
 }
 .el-main {
   padding: 0 !important;
