@@ -2,22 +2,16 @@
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 import CardTitle from "../Common/CardTitle.vue";
+import Permanent from "./CreateProcess/Permanent.vue";
 const router = useRouter();
 
 defineProps({});
 
 const dialogFormVisible = ref(false);
-const formLabelWidth = "140px";
-const form = ref({
-  name: "",
-  region: "",
-  date1: "",
-  date2: "",
-  delivery: false,
-  type: [],
-  resource: "",
-  desc: "",
-});
+const getPermanentform = (data) => {
+  console.log("确认按钮被点击", data.value);
+  dialogFormVisible.value = false;
+};
 </script>
 
 <template>
@@ -26,53 +20,182 @@ const form = ref({
       ><el-card style="height: 50%" shadow="always">
         <CardTitle title="人事教育类" />
         <div class="content">
-          <a href="#" @click="dialogFormVisible = true">长驻申请</a>
+          <div class="processItem">
+            <img src="../../images/workflowTitle_wev8.png" alt="" />
+            <a href="#" @click="dialogFormVisible = true">长驻申请</a>
+          </div>
+          <div class="processItem">
+            <img src="../../images/workflowTitle_wev8.png" alt="" />
+            <a href="#" @click="dialogFormVisible = true">出差申请</a>
+          </div>
+          <div class="processItem">
+            <img src="../../images/workflowTitle_wev8.png" alt="" />
+            <a href="#" @click="dialogFormVisible = true">外出申请</a>
+          </div>
+          <div class="processItem">
+            <img src="../../images/workflowTitle_wev8.png" alt="" />
+            <a href="#" @click="dialogFormVisible = true">考勤补签申请</a>
+          </div>
+          <div class="processItem">
+            <img src="../../images/workflowTitle_wev8.png" alt="" />
+            <a href="#" @click="dialogFormVisible = true">劳动合同续签申请</a>
+          </div>
+          <div class="processItem">
+            <img src="../../images/workflowTitle_wev8.png" alt="" />
+            <a href="#" @click="dialogFormVisible = true">离职申请</a>
+          </div>
+          <div class="processItem">
+            <img src="../../images/workflowTitle_wev8.png" alt="" />
+            <a href="#" @click="dialogFormVisible = true">转正定级申请</a>
+          </div>
+          <div class="processItem">
+            <img src="../../images/workflowTitle_wev8.png" alt="" />
+            <a href="#" @click="dialogFormVisible = true">资格认证考试申请</a>
+          </div>
+          <div class="processItem">
+            <img src="../../images/workflowTitle_wev8.png" alt="" />
+            <a href="#" @click="dialogFormVisible = true">远程办公申请</a>
+          </div>
         </div></el-card
       ><el-card style="height: calc(50% - 10px)" class="top10" shadow="always">
         <CardTitle title="工会类" />
-        <div class="content">工会类</div></el-card
+        <div class="content">
+          <div class="processItem">
+            <img src="../../images/workflowTitle_wev8.png" alt="" />
+            <a href="#" @click="dialogFormVisible = true">工会会员登记表</a>
+          </div>
+          <div class="processItem">
+            <img src="../../images/workflowTitle_wev8.png" alt="" />
+            <a href="#" @click="dialogFormVisible = true"
+              >采购申请（工会专用）</a
+            >
+          </div>
+          <div class="processItem">
+            <img src="../../images/workflowTitle_wev8.png" alt="" />
+            <a href="#" @click="dialogFormVisible = true"
+              >合同审批申请（工会专用）</a
+            >
+          </div>
+          <div class="processItem">
+            <img src="../../images/workflowTitle_wev8.png" alt="" />
+            <a href="#" @click="dialogFormVisible = true"
+              >验收入库申请（工会专用）</a
+            >
+          </div>
+          <div class="processItem">
+            <img src="../../images/workflowTitle_wev8.png" alt="" />
+            <a href="#" @click="dialogFormVisible = true"
+              >费用报销/汇款申请（工会专用）</a
+            >
+          </div>
+        </div></el-card
       ></el-col
     >
     <el-col :span="8"
       ><el-card style="height: 50%" shadow="always">
         <CardTitle title="业务财务类" />
-        <div class="content">业务财务类</div></el-card
+        <div class="content">
+          <div class="processItem">
+            <img src="../../images/workflowTitle_wev8.png" alt="" />
+            <a href="#" @click="dialogFormVisible = true">费用报销/汇款申请</a>
+          </div>
+          <div class="processItem">
+            <img src="../../images/workflowTitle_wev8.png" alt="" />
+            <a href="#" @click="dialogFormVisible = true">到票流程</a>
+          </div>
+          <div class="processItem">
+            <img src="../../images/workflowTitle_wev8.png" alt="" />
+            <a href="#" @click="dialogFormVisible = true">借款申请</a>
+          </div>
+          <div class="processItem">
+            <img src="../../images/workflowTitle_wev8.png" alt="" />
+            <a href="#" @click="dialogFormVisible = true">专利奖励申请</a>
+          </div>
+        </div></el-card
       ><el-card style="height: calc(50% - 10px)" class="top10" shadow="always">
         <CardTitle title="行政类" />
-        <div class="content">行政类</div></el-card
+        <div class="content">
+          <div class="processItem">
+            <img src="../../images/workflowTitle_wev8.png" alt="" />
+            <a href="#" @click="dialogFormVisible = true">名片制作申请</a>
+          </div>
+          <div class="processItem">
+            <img src="../../images/workflowTitle_wev8.png" alt="" />
+            <a href="#" @click="dialogFormVisible = true">车辆使用申请</a>
+          </div>
+          <div class="processItem">
+            <img src="../../images/workflowTitle_wev8.png" alt="" />
+            <a href="#" @click="dialogFormVisible = true">公司资料申请</a>
+          </div>
+          <div class="processItem">
+            <img src="../../images/workflowTitle_wev8.png" alt="" />
+            <a href="#" @click="dialogFormVisible = true"
+              >专项培训签证/就业签证申请</a
+            >
+          </div>
+        </div></el-card
       ></el-col
     >
     <el-col :span="8"
       ><el-card style="height: 50%" shadow="always">
         <CardTitle title="基础架构类" />
-        <div class="content">基础架构类</div></el-card
+        <div class="content">
+          <div class="processItem">
+            <img src="../../images/workflowTitle_wev8.png" alt="" />
+            <a href="#" @click="dialogFormVisible = true">服务开通申请</a>
+          </div>
+          <div class="processItem">
+            <img src="../../images/workflowTitle_wev8.png" alt="" />
+            <a href="#" @click="dialogFormVisible = true">办公用品申请</a>
+          </div>
+          <div class="processItem">
+            <img src="../../images/workflowTitle_wev8.png" alt="" />
+            <a href="#" @click="dialogFormVisible = true">设备归还申请</a>
+          </div>
+          <div class="processItem">
+            <img src="../../images/workflowTitle_wev8.png" alt="" />
+            <a href="#" @click="dialogFormVisible = true">设备信息更新申请</a>
+          </div>
+          <div class="processItem">
+            <img src="../../images/workflowTitle_wev8.png" alt="" />
+            <a href="#" @click="dialogFormVisible = true">设备领用申请</a>
+          </div>
+          <div class="processItem">
+            <img src="../../images/workflowTitle_wev8.png" alt="" />
+            <a href="#" @click="dialogFormVisible = true">设备更换申请</a>
+          </div>
+          <div class="processItem">
+            <img src="../../images/workflowTitle_wev8.png" alt="" />
+            <a href="#" @click="dialogFormVisible = true">设备带出申请</a>
+          </div>
+        </div></el-card
       ><el-card style="height: calc(50% - 10px)" class="top10" shadow="always">
         <CardTitle title="法务风控类" />
-        <div class="content">法务风控类</div></el-card
+        <div class="content">
+          <div class="processItem">
+            <img src="../../images/workflowTitle_wev8.png" alt="" />
+            <a href="#" @click="dialogFormVisible = true">电子签章制作申请</a>
+          </div>
+          <div class="processItem">
+            <img src="../../images/workflowTitle_wev8.png" alt="" />
+            <a href="#" @click="dialogFormVisible = true">合同变更/作废申请</a>
+          </div>
+          <div class="processItem">
+            <img src="../../images/workflowTitle_wev8.png" alt="" />
+            <a href="#" @click="dialogFormVisible = true">用章申请</a>
+          </div>
+          <div class="processItem">
+            <img src="../../images/workflowTitle_wev8.png" alt="" />
+            <a href="#" @click="dialogFormVisible = true">合同审批申请</a>
+          </div>
+        </div></el-card
       ></el-col
     >
   </el-row>
-  <el-dialog v-model="dialogFormVisible" title="长驻申请" width="500">
-    <el-form :model="form">
-      <el-form-item label="xxxx" :label-width="formLabelWidth">
-        <el-input v-model="form.name" autocomplete="off" />
-      </el-form-item>
-      <el-form-item label="长驻区域" :label-width="formLabelWidth">
-        <el-select v-model="form.region" placeholder="Please select a zone">
-          <el-option label="1" value="上海" />
-          <el-option label="2" value="南京" />
-        </el-select>
-      </el-form-item>
-    </el-form>
-    <template #footer>
-      <div class="dialog-footer">
-        <el-button @click="dialogFormVisible = false">取消</el-button>
-        <el-button type="primary" @click="dialogFormVisible = false">
-          确认
-        </el-button>
-      </div>
-    </template>
-  </el-dialog>
+  <Permanent
+    v-model:dialogFormVisible="dialogFormVisible"
+    @getPermanentform="getPermanentform"
+  />
 </template>
 
 <style scoped>
@@ -97,5 +220,20 @@ const form = ref({
   height: calc(100% - 40px);
   margin-top: 10px;
   overflow: hidden;
+}
+
+.processItem {
+  height: 30px;
+  border-bottom: 1px dashed #f0f0f0;
+  padding-left: 0px;
+  position: relative;
+}
+
+.processItem > img {
+  margin-right: 10px;
+}
+
+.processItem > a {
+  text-decoration: none;
 }
 </style>
