@@ -10,9 +10,17 @@ const search = ref("");
 
 <template>
   <div class="search-main">
-    <div class="search-item">
-      <el-input v-model="search"></el-input>
-      <el-button type="primary">搜索</el-button>
+    <div>
+      <div class="search-title">
+        <img src="../../images/wslogn_wev8.png" alt="" /><span
+          class="search-title-span"
+          >微搜</span
+        >
+      </div>
+      <div class="search-item">
+        <el-input v-model="search"></el-input>
+        <el-button type="primary">搜索</el-button>
+      </div>
     </div>
   </div>
 </template>
@@ -26,13 +34,21 @@ const search = ref("");
   align-items: center;
 }
 
-/* .search-item {
-  display: flex;
-  justify-content: center;
-} */
-
 .el-input {
   width: 300px;
   margin-right: 5px;
+}
+
+.search-title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.search-title-span {
+  font-weight: 500;
+  font-size: 30px;
+  padding-left: 10px;
+  color: rgb(0, 0, 0);
 }
 </style>
