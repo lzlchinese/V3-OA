@@ -8,6 +8,6 @@ defineProps({});
 const count = ref(0);
 </script>
 
-<template>我是服务作业指南</template>
+<template>我是项目管理（管理员操作）</template>
 
 <style scoped></style>
