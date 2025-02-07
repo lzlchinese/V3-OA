@@ -78,12 +78,6 @@ watch(
 .el-menu--horizontal > .el-menu-item {
   color: #fff;
 }
-.el-menu--horizontal > .el-menu-item:nth-child(1) {
-  background: rgb(0, 141, 246);
-  font-size: 15px;
-  color: #fff;
-  width: 200px;
-}
 .el-menu--horizontal > .el-menu-item:last-child {
   position: absolute;
   right: 25px;
@@ -96,15 +90,40 @@ watch(
   color: #a4cceb !important;
 }
 ::v-deep .el-menu-demo .el-menu-item.is-active {
-  color: #fff !important;
+  color: #000 !important;
+  background-color: #fff !important;
+}
+.el-menu--horizontal > .el-menu-item.is-active {
+  background-color: #fff !important;
 }
 .el-menu-demo .el-menu-item:hover {
-  color: #fff !important;
-  background-color: rgb(0, 112, 193) !important;
+  color: #409eff !important;
+  background-color: rgb(235.9, 245.3, 255) !important;
+  border-bottom: #409eff solid 2px;
+}
+.el-menu-demo .el-menu-item:active {
+  color: #409eff !important;
+  background-color: #fff !important;
+  border-bottom: #409eff solid 2px;
 }
 .el-main {
   padding: 0 !important;
   width: 100%;
   height: calc(100vh - 60px);
+}
+
+.el-menu--horizontal > .el-menu-item:nth-child(1) {
+  background: rgb(0, 141, 246);
+  font-size: 15px;
+  color: #fff;
+  width: 200px;
+}
+.el-menu--horizontal > .el-menu-item:nth-child(1):hover {
+  background: rgb(0, 141, 246) !important;
+  color: #fff !important;
+}
+.el-menu--horizontal > .el-menu-item:nth-child(1):focus {
+  background: rgb(0, 141, 246) !important;
+  color: #fff !important;
 }
 </style>
