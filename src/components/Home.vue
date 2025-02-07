@@ -3,9 +3,10 @@
     <el-aside width="100%">
       <el-menu
         router
-        default-active="/Portal"
+        :default-active="activePath"
         class="el-menu-demo"
         mode="horizontal"
+        @select="handleSelect"
       >
         <el-menu-item>
           <div>管理员 | 刘忠磊</div>
@@ -30,15 +31,47 @@
 
 <script lang="ts" setup>
 import { ref, watch } from "vue";
-const activeIndex = ref("/Portal");
 import { useRouter, useRoute } from "vue-router";
 
 const router = useRouter();
 const route = useRoute();
 
+const activePath = ref("/Portal");
+
 function logout() {
   router.push("/");
 }
+
+function handleSelect(key, keyPath) {}
+
+watch(
+  () => route.path,
+  (path) => {
+    const pathLists1 = ["/CompanyPortal", "/ServiceGuide", "/ITGuide"];
+    const pathLists2 = ["/NewProcess", "/ToDoProcess", "/CompletedProcess"];
+    const pathLists3 = ["/MyCard", "/MySalary", "/MyAttendance"];
+    const pathLists4 = [
+      "/MyDocuments",
+      "/MyInvestigation",
+      "/DocumentRecycleBin",
+    ];
+    const pathLists5 = ["/MyProjects", "/ProjectManagement"];
+    if (pathLists1.includes(path)) {
+      activePath.value = "/Portal";
+    } else if (pathLists2.includes(path)) {
+      activePath.value = "/Process";
+    } else if (pathLists3.includes(path)) {
+      activePath.value = "/Personnel";
+    } else if (pathLists4.includes(path)) {
+      activePath.value = "/Documents";
+    } else if (pathLists5.includes(path)) {
+      activePath.value = "/Projects";
+    } else {
+      activePath.value = "/Search";
+    }
+  },
+  { immediate: true }
+);
 </script>
 
 <style>
