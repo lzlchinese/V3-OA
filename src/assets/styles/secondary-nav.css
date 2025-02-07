@@ -18,6 +18,9 @@
   width: calc(100% - 200px);
   float: right;
 }
+.tac > .el-col {
+  padding: 0;
+}
 .el-menu-vertical {
   width: 200px;
   float: left;
