@@ -7,7 +7,7 @@ const props = defineProps({
   }
 });
 
-const emit = defineEmits(['childEvent']);
+const emit = defineEmits(['getPermanentform']);
 
 const Permanentform = ref({
   name: "",
