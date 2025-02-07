@@ -119,11 +119,7 @@ function goToAbout() {
 父组件 App.vue
 
 ```javascript
-<Login title="xxx" />;
-defineProps({
-  title: String,
-});
-<h1>{{ title }}</h1>;
+<Login :title="xxx" />;
 ```
 
 子组件 Login.vue
@@ -133,6 +129,41 @@ defineProps({
   title: String,
 });
 <h1>{{ title }}</h1>;
+```
+
+子传父
+
+子组件 Login.vue
+
+```javascript
+<el-button type="primary" @click="submitForm(ruleFormRef )"> 确认 </el-button>
+
+const emit = defineEmits(['getPermanentform']);
+const submitForm = async (ruleFormRef) => {
+  if (!ruleFormRef) return;
+  await ruleFormRef.validate((valid, fields) => {
+    if (valid) {
+      emit('getPermanentform', Permanentform);
+      console.log("submit!");
+    } else {
+      console.log("error submit!", fields);
+    }
+  });
+};
+
+```
+
+父组件 App.vue
+
+```javascript
+<Permanent
+  @getPermanentform="getPermanentform"
+/>
+
+const getPermanentform = (data) => {
+  console.log("确认按钮被点击", data.value);
+  dialogFormVisible.value = false;
+};
 ```
 
 2. 路由跳转
