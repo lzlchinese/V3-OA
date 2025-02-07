@@ -51,33 +51,5 @@ const tableData = [
 </template>
 
 <style scoped>
-.el-card {
-  width: 100%;
-}
-::v-deep .el-card__body {
-  height: calc(100% - 40px);
-}
-.el-row {
-  height: 100%;
-}
-.el-col {
-  padding: 10px;
-  height: 100%;
-}
-.top10 {
-  margin-top: 10px;
-}
-.content {
-  width: 100%;
-  height: calc(100% - 40px);
-  margin-top: 10px;
-  overflow: hidden;
-}
-
-.mt-4 {
-  position: absolute;
-  right: calc(50% - 100px);
-  bottom: 30px;
-  transform: translate(-50%, 0);
-}
+@import "../../assets/styles/secondary-nav.css";
 </style>

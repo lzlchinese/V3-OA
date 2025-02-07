@@ -1,0 +1,24 @@
+.el-card {
+  width: 100%;
+}
+::v-deep .el-card__body {
+  height: calc(100% - 40px);
+}
+.el-row {
+  height: 100%;
+}
+.el-col {
+  padding: 10px;
+  height: 100%;
+}
+
+.tac,
+.el-menu {
+  height: 100%;
+  width: calc(100% - 200px);
+  float: right;
+}
+.el-menu-vertical {
+  width: 200px;
+  float: left;
+}

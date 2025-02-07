@@ -44,14 +44,5 @@ defineProps({});
 </template>
 
 <style scoped>
-.tac,
-.el-menu {
-  height: 100%;
-  width: calc(100% - 200px);
-  float: right;
-}
-.el-menu-vertical {
-  width: 200px;
-  float: left;
-}
+@import "../../assets/styles/secondary-nav.css";
 </style>

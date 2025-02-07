@@ -21,7 +21,12 @@ const myAssets = ref([
   { index: "1", asset: "PC主机", num: "D200917_0141", name: "G08FNSTD200141" },
 ]);
 const myServices = ref([
-  { classification: "VPN", opening: "2024-06-01", status: "开通", closing: "2024-06-02" },
+  {
+    classification: "VPN",
+    opening: "2024-06-01",
+    status: "开通",
+    closing: "2024-06-02",
+  },
 ]);
 </script>
 
@@ -68,7 +73,11 @@ const myServices = ref([
             style="width: 100%"
             height="calc(100% - 10px)"
           >
-            <el-table-column prop="classification" label="服务分类" width="80" />
+            <el-table-column
+              prop="classification"
+              label="服务分类"
+              width="80"
+            />
             <el-table-column prop="opening" label="开通时间" />
             <el-table-column prop="status" label="服务状态" />
             <el-table-column prop="closing" label="到期时间" width="150" />
@@ -77,26 +86,5 @@ const myServices = ref([
 </template>
 
 <style scoped>
-.el-card {
-  width: 100%;
-}
-::v-deep .el-card__body {
-  height: calc(100% - 40px);
-}
-.el-row {
-  height: 100%;
-}
-.el-col {
-  padding: 10px;
-  height: 100%;
-}
-.top10 {
-  margin-top: 10px;
-}
-.content {
-  width: 100%;
-  height: calc(100% - 40px);
-  margin-top: 10px;
-  overflow: hidden;
-}
+@import "../../assets/styles/secondary-nav.css";
 </style>

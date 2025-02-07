@@ -40,7 +40,6 @@ const tableData = [
             <el-table-column property="address" label="开发部" />
             <el-table-column property="address" label="负责人" />
             <el-table-column property="address" label="开发人员" />
-
             <el-table-column property="address" label="开始时间" />
             <el-table-column property="address" label="预检时间" />
             <el-table-column fixed="right" label="操作" min-width="60">
@@ -70,33 +69,5 @@ const tableData = [
 </template>
 
 <style scoped>
-.el-card {
-  width: 100%;
-}
-::v-deep .el-card__body {
-  height: calc(100% - 40px);
-}
-.el-row {
-  height: 100%;
-}
-.el-col {
-  padding: 10px;
-  height: 100%;
-}
-.top10 {
-  margin-top: 10px;
-}
-.content {
-  width: 100%;
-  height: calc(100% - 40px);
-  margin-top: 10px;
-  overflow: hidden;
-}
-
-.mt-4 {
-  position: absolute;
-  right: calc(50% - 100px);
-  bottom: 30px;
-  transform: translate(-50%, 0);
-}
+@import "../../assets/styles/secondary-nav.css";
 </style>

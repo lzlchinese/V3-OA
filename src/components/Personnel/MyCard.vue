@@ -83,26 +83,5 @@ const count = ref(0);
 </template>
 
 <style scoped>
-.el-card {
-  width: 100%;
-}
-::v-deep .el-card__body {
-  height: calc(100% - 40px);
-}
-.el-row {
-  height: 100%;
-}
-.el-col {
-  padding: 10px;
-  height: 100%;
-}
-.top10 {
-  margin-top: 10px;
-}
-.content {
-  width: 100%;
-  height: calc(100% - 40px);
-  margin-top: 10px;
-  overflow: hidden;
-}
+@import "../../assets/styles/secondary-nav.css";
 </style>
