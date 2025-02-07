@@ -1,18 +1,22 @@
 <script setup>
-import { ref } from "vue";
-import { useRouter } from "vue-router";
-const handleOpen = (key, keyPath) => {
-  console.log(key, keyPath);
-};
-const handleClose = (key, keyPath) => {
-  console.log(key, keyPath);
-};
+import { ref, watch } from "vue";
+import { useRouter, useRoute } from "vue-router";
+const handleSelect = (key, keyPath) => {};
 
 const router = useRouter();
+const route = useRoute();
+
+const activePath = ref("/MyProjects");
+
+watch(
+  () => route.path,
+  (path) => {
+    activePath.value = path;
+  },
+  { immediate: true }
+);
 
 defineProps({});
-
-const count = ref(0);
 </script>
 
 <template>
@@ -20,10 +24,9 @@ const count = ref(0);
     active-text-color="#ffd04b"
     background-color="#545c64"
     class="el-menu-vertical"
-    default-active="/MyProjects"
+    :default-active="activePath"
     text-color="#fff"
-    @open="handleOpen"
-    @close="handleClose"
+    @select="handleSelect"
     router
   >
     <el-menu-item index="/MyProjects">
