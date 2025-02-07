@@ -1,0 +1,17 @@
+.top10 {
+  margin-top: 10px;
+}
+
+.mt-4 {
+  position: absolute;
+  right: calc(50% - 100px);
+  bottom: 30px;
+  transform: translate(-50%, 0);
+}
+
+.content {
+  width: 100%;
+  height: calc(100% - 40px);
+  margin-top: 10px;
+  overflow: hidden;
+}
