@@ -1,12 +1,31 @@
 <script setup>
 import { ref } from "vue";
+import { useCounterStore } from "../stores/store";
 import { useRouter } from "vue-router";
+import { ElMessage } from "element-plus";
+
+const username = ref("");
+const password = ref("");
 
 const router = useRouter();
+const level = useCounterStore();
 
 defineProps({});
 
 function goToPortal() {
+  if (!username.value) {
+    ElMessage.error("请填写用户名");
+    return;
+  }
+  if (!password.value) {
+    ElMessage.error("请填写密码");
+    return;
+  }
+  if (username.value === "liuzl") {
+    level.setLevel(1);
+  } else {
+    level.setLevel(0);
+  }
   router.push("/Home");
 }
 </script>
@@ -17,11 +36,19 @@ function goToPortal() {
       <h1 class="title">{{ "富士通（南京）软件技术有限公司" }}</h1>
       <div class="username">
         <div class="username-icon icon"></div>
-        <Input class="username-input" placeholder="用户" />
+        <el-input
+          v-model="username"
+          class="username-input"
+          placeholder="用户"
+        ></el-input>
       </div>
       <div class="password">
         <div class="password-icon icon"></div>
-        <Input class="username-input" placeholder="密码" />
+        <el-input
+          v-model="password"
+          class="username-input"
+          placeholder="密码"
+        ></el-input>
       </div>
       <Button class="login-button" @click="goToPortal">登录</Button>
     </div>
@@ -80,9 +107,17 @@ function goToPortal() {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+::v-deep .username-input .el-input__wrapper {
   background: transparent;
   border: none;
+  box-shadow: none;
+}
+::v-deep .username-input .el-input__wrapper .el-input__inner {
   color: #fff;
+}
+::v-deep .username-input .el-input__wrapper .el-input__inner::placeholder {
+  color: #666;
 }
 .username-input:focus-visible {
   outline: none;
