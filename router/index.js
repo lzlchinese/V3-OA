@@ -35,6 +35,7 @@ import ProjectManagement from "../src/components/Projects/ProjectManagement.vue"
 // Search
 import Search from "../src/components/Search/Search.vue";
 
+// Users
 const routes = [
   {
     path: "/",
@@ -45,12 +46,12 @@ const routes = [
     path: "/Home",
     name: "Home",
     component: Home,
-    redirect: '/CompanyPortal',
+    redirect: "/CompanyPortal",
     children: [
       {
         path: "/Portal",
         component: Portal,
-        redirect: '/CompanyPortal',
+        redirect: "/CompanyPortal",
         children: [
           {
             path: "/CompanyPortal",
@@ -69,7 +70,7 @@ const routes = [
       {
         path: "/Process",
         component: Process,
-        redirect: '/NewProcess',
+        redirect: "/NewProcess",
         children: [
           {
             path: "/NewProcess",
@@ -82,7 +83,7 @@ const routes = [
       {
         path: "/Personnel",
         component: Personnel,
-        redirect: '/MyCard',
+        redirect: "/MyCard",
         children: [
           {
             path: "/MyCard",
@@ -95,7 +96,7 @@ const routes = [
       {
         path: "/Documents",
         component: Documents,
-        redirect: '/MyDocuments',
+        redirect: "/MyDocuments",
         children: [
           {
             path: "/MyDocuments",
@@ -108,7 +109,95 @@ const routes = [
       {
         path: "/Projects",
         component: Projects,
-        redirect: '/MyProjects',
+        redirect: "/MyProjects",
+        children: [
+          { path: "/MyProjects", component: MyProjects },
+          // { path: "/ProjectManagement", component: ProjectManagement },
+        ],
+      },
+      {
+        path: "/Search",
+        component: Search,
+      },
+    ],
+  },
+];
+
+// Users
+const AdminRoutes = [
+  {
+    path: "/",
+    name: "Login",
+    component: Login,
+  },
+  {
+    path: "/Home",
+    name: "Home",
+    component: Home,
+    redirect: "/CompanyPortal",
+    children: [
+      {
+        path: "/Portal",
+        component: Portal,
+        redirect: "/CompanyPortal",
+        children: [
+          {
+            path: "/CompanyPortal",
+            component: CompanyPortal,
+          },
+          {
+            path: "/ServiceGuide",
+            component: ServiceGuide,
+          },
+          {
+            path: "/ITGuide",
+            component: ITGuide,
+          },
+        ],
+      },
+      {
+        path: "/Process",
+        component: Process,
+        redirect: "/NewProcess",
+        children: [
+          {
+            path: "/NewProcess",
+            component: NewProcess,
+          },
+          { path: "/ToDoProcess", component: ToDoProcess },
+          { path: "/CompletedProcess", component: CompletedProcess },
+        ],
+      },
+      {
+        path: "/Personnel",
+        component: Personnel,
+        redirect: "/MyCard",
+        children: [
+          {
+            path: "/MyCard",
+            component: MyCard,
+          },
+          { path: "/MySalary", component: MySalary },
+          { path: "/MyAttendance", component: MyAttendance },
+        ],
+      },
+      {
+        path: "/Documents",
+        component: Documents,
+        redirect: "/MyDocuments",
+        children: [
+          {
+            path: "/MyDocuments",
+            component: MyDocuments,
+          },
+          { path: "/MyInvestigation", component: MyInvestigation },
+          { path: "/DocumentRecycleBin", component: DocumentRecycleBin },
+        ],
+      },
+      {
+        path: "/Projects",
+        component: Projects,
+        redirect: "/MyProjects",
         children: [
           { path: "/MyProjects", component: MyProjects },
           { path: "/ProjectManagement", component: ProjectManagement },
@@ -128,3 +217,22 @@ const router = createRouter({
 });
 
 export default router;
+
+// async function generateRoutes() {
+//   const permission = await getUserPermission();
+//   const router = null;
+//   if (permission === "user") {
+//     router = createRouter({
+//       mode: "history",
+//       routes: routes,
+//     });
+//   } else if (permission === "admin") {
+//     router = createRouter({
+//       mode: "history",
+//       routes: AdminRoutes,
+//     });
+//   }
+//   return router;
+// }
+
+// export default generateRoutes();

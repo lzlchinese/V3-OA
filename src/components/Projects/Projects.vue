@@ -32,9 +32,9 @@ defineProps({});
     <el-menu-item index="/MyProjects">
       <span>我的项目</span>
     </el-menu-item>
-    <el-menu-item index="/ProjectManagement">
+    <!-- <el-menu-item index="/ProjectManagement">
       <span>项目管理</span>
-    </el-menu-item>
+    </el-menu-item> -->
   </el-menu>
   <el-row class="tac">
     <el-col :span="24">

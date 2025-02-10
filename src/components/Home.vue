@@ -78,11 +78,6 @@ watch(
 .el-menu--horizontal > .el-menu-item {
   color: #fff;
 }
-.el-menu--horizontal > .el-menu-item:last-child {
-  position: absolute;
-  right: 25px;
-  top: 0;
-}
 .el-menu-demo {
   background: rgb(0, 112, 193) !important;
 }
@@ -125,5 +120,17 @@ watch(
 .el-menu--horizontal > .el-menu-item:nth-child(1):focus {
   background: rgb(0, 141, 246) !important;
   color: #fff !important;
+}
+
+.el-menu--horizontal > .el-menu-item:last-child {
+  position: absolute;
+  right: 25px;
+  top: 0;
+}
+.el-menu--horizontal > .el-menu-item:last-child:hover {
+  background: rgb(0, 112, 193) !important;
+}
+.el-menu--horizontal > .el-menu-item:last-child:focus {
+  background: rgb(0, 112, 193) !important;
 }
 </style>
