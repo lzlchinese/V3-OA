@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import { createPinia } from 'pinia';
 import App from './App.vue'
 
 import Echarts from 'vue-echarts';
@@ -13,7 +14,9 @@ import router from '../router';
 import './assets/styles/common.css';
 
 const app = createApp(App)
+const pinia = createPinia();
 
+app.use(pinia);
 app.use(ElementPlus)
 app.use(router)
 // 使用组件
