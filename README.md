@@ -111,8 +111,28 @@ function goToAbout() {
 ```
 
 ## 知识点
+1.对比之前的vue2，vue3升级了什么
+```
+· 使用了Composition API，提高了代码逻辑的可复用性。
+  （Composition API是Vue 3中的一个新特性，它允许开发者以更灵活和可复用的方式组织组件逻辑。通过使用Composition API，可以更好地组织代码和管理状态。）
+· 引入了Fragment，允许组件有多个根节点。
+  （Fragment是用来承载多个子元素的虚拟组件。在Vue 2中，使用v-for迭代元素时需要添加一个包装元素，而Vue 3中的Fragment解决了这个问题。）
+· 提供了更好的TypeScript支持。
+· 使用了更小的包体积和更高效的运行时性能。
+· 提供了Suspense组件，用于处理异步组件的加载状态。
+  （Suspense组件用于实现延迟加载和错误处理。在组件中加入Suspense，可以让异步组件渲染出加载状态，并且如果异步组件加载时出现错误，也能够处理这些错误。）
+· Teleport组件允许将子组件渲染到DOM中的任何位置。
+  （Teleport是Vue 3中控制渲染位置的新指令，它允许在DOM中移动一个组件的内容而不改变组件的父级。）
+```
 
-1. 父子传值
+2.请解释Vue 3的Composition API是什么？
+```
+Composition API是一组新的、基于函数的API，它允许开发者以更灵活和可复用的方式组织组件逻辑。
+它主要包括ref、reactive、computed、watch、setup等函数和钩子。
+其中，setup()是Vue 3组件选项API中的一个新选项，是Composition API的入口点，在组件被创建之前执行，用于初始化状态、计算属性和方法，并返回在模板中使用的响应式引用。
+```
+
+3. 父子传值
 
 父传子
 
@@ -166,7 +186,7 @@ const getPermanentform = (data) => {
 };
 ```
 
-2. 路由跳转
+4. 路由跳转
 
 ```javascript
 import { useRouter, useRoute } from "vue-router";
@@ -176,20 +196,32 @@ router.push(path) // 可以进行路由跳转
 route.path // 获取当前路由path
 ```
 
-3. 引入css样式文件
+5. 引入css样式文件
    
-   （1）全局css文件
-      在main.js文件中
+（1）全局css文件
+
+   在main.js文件中
  ```javascript
 // 导入全局样式文件
 import './assets/styles/common.css';
 ```
    
-   （2）单个文件
-      在单个文件中
+（2）单个文件
+
+    在单个文件中
 ```javascript
 <style scoped>
   @import "../../assets/styles/secondary-nav.css";
 </style>
 ```
+
+
+
+
+
+
+
+
+
+
    
