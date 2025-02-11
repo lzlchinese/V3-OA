@@ -4,20 +4,16 @@ import { useRouter } from "vue-router";
 import CardTitle from "../Common/CardTitle.vue";
 import Directory from "../Common/Directory.vue";
 import moment from "moment";
+import axios from "../../axios/axios";
 const router = useRouter();
 
 defineProps({});
-
-import axios from "../../axios/axios";
-
-const processData = ref(null);
 
 const toDo = ref([]);
 
 const fetchData = async () => {
   try {
     const response = await axios.get("/process?processStatus=0");
-    processData.value = response;
     response.forEach((item) => {
       const obj = {};
       obj.title =
