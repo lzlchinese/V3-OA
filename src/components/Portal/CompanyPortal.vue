@@ -1,11 +1,51 @@
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 import { useRouter } from "vue-router";
 import CardTitle from "../Common/CardTitle.vue";
 import Directory from "../Common/Directory.vue";
+import moment from "moment";
 const router = useRouter();
 
 defineProps({});
+
+import axios from "../../axios/axios";
+
+const processData = ref(null);
+
+const toDo = ref([]);
+
+const fetchData = async () => {
+  try {
+    const response = await axios.get("/process?processStatus=0");
+    processData.value = response;
+    response.forEach((item) => {
+      const obj = {};
+      obj.title =
+        item.processName +
+        "-" +
+        item.createPerson +
+        "-" +
+        moment(item.createTime).format("YYYY-MM-DD");
+      obj.link = "#chapter1";
+      obj.date = moment(item.modifitionTime).format("YYYY-MM-DD");
+      toDo.value.push(obj);
+    });
+  } catch (error) {
+    console.error("我的待办数据请求失败:", error);
+    toDo.value = [
+      {
+        title: "请假申请-刘忠磊-2025-01-23",
+        link: "#chapter1",
+        date: "2025-01-23",
+      },
+    ];
+  }
+};
+
+// // 在组件挂载后发起请求
+onMounted(async () => {
+  await fetchData();
+});
 
 const announcement = ref([
   { title: "2025年休假表", link: "#chapter1", date: "2025-01-23" },
@@ -13,14 +53,6 @@ const announcement = ref([
     title: "关于2025年春节放假的通知 未读文档",
     link: "#chapter2",
     date: "2025-01-22",
-  },
-]);
-
-const toDo = ref([
-  {
-    title: "请假申请-刘忠磊-2025-01-23",
-    link: "#chapter1",
-    date: "2025-01-23",
   },
 ]);
 
