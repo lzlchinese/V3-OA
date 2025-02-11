@@ -96,18 +96,88 @@ app.mount("#app");
 </template>
 ```
 
-5. 跳转路由
+## 处理跨域问题
+
+使用 Vite 的代理功能（推荐在开发环境下使用，vue cli类似）
+
+1.找到vite.config.js文件
+```javascript
+export default defineConfig({
+  plugins: [vue()],
+})
+  server: {
+    proxy: {
+      "/api": {
+        target: "http://localhost:3000", // 后端API地址
+        changeOrigin: true, // 改变请求源，避免CORS问题
+        rewrite: (path) => path.replace(/^\/api/, ""), // 重写路径，去掉/api前缀
+      },
+      // 你可以添加更多的代理规则
+    },
+  },
+});
+```
+
+## 安装axios
+
+1. 安装 vue-router
+
+```bash
+  pnpm install axios
+```
+
+2. 新建axios.js文件
 
 ```javascript
-<script setup>
-import { useRouter } from 'vue-router';
+// src/axios.js
+import axios from "axios";
 
-const router = useRouter();
+// 创建一个Axios实例，可以根据需要配置baseURL、headers等
+const instance = axios.create({
+  baseURL: "/api", // 参考上面的跨域
+  timeout: 10000, // 请求超时时间
+});
 
-function goToAbout() {
-  router.push('/about');
-}
-</script>
+// 请求拦截器
+instance.interceptors.request.use(
+  (config) => {
+    // 在发送请求之前做一些处理，例如添加 token
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
+// 响应拦截器
+instance.interceptors.response.use(
+  (response) => {
+    // 对响应数据做一些处理
+    return response.data;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
+export default instance;
+```
+
+3. 接口对接
+```javascript
+\\ xxxx.vue
+import axios from "../../axios/axios";
+const processData = ref(null);
+const fetchData = async () => {
+  try {
+    const response = await axios.get("/process?processStatus=0");
+    processData.value = response;
+    });
+  } catch (error) {
+    console.error("我的待办数据请求失败:", error);
+  }
+};
+
 ```
 
 ## 知识点
