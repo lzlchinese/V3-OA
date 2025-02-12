@@ -9,7 +9,9 @@ defineProps({});
 
 const dialogFormVisible = ref(false);
 const getPermanentform = (data) => {
-  console.log("确认按钮被点击", data.value);
+  dialogFormVisible.value = false;
+};
+const dialogVisible = (data) => {
   dialogFormVisible.value = false;
 };
 </script>
@@ -195,6 +197,7 @@ const getPermanentform = (data) => {
   <Permanent
     v-model:dialogFormVisible="dialogFormVisible"
     @getPermanentform="getPermanentform"
+    @dialogVisible="dialogVisible"
   />
 </template>
 
