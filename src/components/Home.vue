@@ -32,7 +32,7 @@
 <script lang="ts" setup>
 import { ref, watch } from "vue";
 import { useRouter, useRoute } from "vue-router";
-import { useCounterStore } from '../stores/store';
+import { useCounterStore } from "../stores/store";
 const level = useCounterStore();
 
 const router = useRouter();
@@ -72,7 +72,7 @@ watch(
       activePath.value = "/Search";
     }
   },
-  { immediate: true }
+  { immediate: true },
 );
 </script>
 
