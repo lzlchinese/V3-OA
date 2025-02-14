@@ -31,12 +31,32 @@ const app = createApp(App);
 app.use(ElementPlus);
 ```
 
+## 安装 prettier
+
+1. 安装 prettier依赖
+```bash
+ pnpm install prettier
+```
+
+2. 配置 prettier脚本
+```json
+// package.json
+"scripts":{
+  "format": "prettier --write ."
+}
+```
+
+3. 使用 prettier
+``` bash
+pnpm run format
+```
+
 ## 安装 router
 
 1. 安装 vue-router
 
 ```bash
-  npm install vue-router
+  pnpm install vue-router
 ```
 
 2. 配置 router
@@ -273,16 +293,13 @@ route.path; // 获取当前路由path
 
 （1）全局css文件
 
-在main.js文件中
-
 ```javascript
+// main.js
 // 导入全局样式文件
 import "./assets/styles/common.css";
 ```
 
 （2）单个文件
-
-    在单个文件中
 
 ```javascript
 <style scoped>@import "../../assets/styles/secondary-nav.css";</style>
