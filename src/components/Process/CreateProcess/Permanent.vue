@@ -100,7 +100,7 @@ watch(
       title.value = "合同审批申请";
     }
   },
-  { immediate: true }
+  { immediate: true },
 );
 const formLabelWidth = "140px";
 

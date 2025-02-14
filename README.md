@@ -111,7 +111,9 @@ function goToAbout() {
 ```
 
 ## 知识点
+
 1.对比之前的vue2，vue3升级了什么
+
 ```
 · 使用了Composition API，提高了代码逻辑的可复用性。
   （Composition API是Vue 3中的一个新特性，它允许开发者以更灵活和可复用的方式组织组件逻辑。通过使用Composition API，可以更好地组织代码和管理状态。）
@@ -126,6 +128,7 @@ function goToAbout() {
 ```
 
 2.请解释Vue 3的Composition API是什么？
+
 ```
 Composition API是一组新的、基于函数的API，它允许开发者以更灵活和可复用的方式组织组件逻辑。
 它主要包括ref、reactive、computed、watch、setup等函数和钩子。
@@ -192,36 +195,25 @@ const getPermanentform = (data) => {
 import { useRouter, useRoute } from "vue-router";
 const router = useRouter();
 const route = useRoute();
-router.push(path) // 可以进行路由跳转
-route.path // 获取当前路由path
+router.push(path); // 可以进行路由跳转
+route.path; // 获取当前路由path
 ```
 
 5. 引入css样式文件
-   
+
 （1）全局css文件
 
-   在main.js文件中
- ```javascript
+在main.js文件中
+
+```javascript
 // 导入全局样式文件
-import './assets/styles/common.css';
+import "./assets/styles/common.css";
 ```
-   
+
 （2）单个文件
 
     在单个文件中
+
 ```javascript
-<style scoped>
-  @import "../../assets/styles/secondary-nav.css";
-</style>
+<style scoped>@import "../../assets/styles/secondary-nav.css";</style>
 ```
-
-
-
-
-
-
-
-
-
-
-   

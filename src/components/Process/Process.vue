@@ -13,7 +13,7 @@ watch(
   (path) => {
     activePath.value = path;
   },
-  { immediate: true }
+  { immediate: true },
 );
 
 defineProps({});

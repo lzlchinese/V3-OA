@@ -74,9 +74,7 @@ const openDialogForm = (level) => {
           </div>
           <div class="processItem">
             <img src="../../images/workflowTitle_wev8.png" alt="" />
-            <a href="#" @click="openDialogForm(`2-2`)"
-              >采购申请（工会专用）</a
-            >
+            <a href="#" @click="openDialogForm(`2-2`)">采购申请（工会专用）</a>
           </div>
           <div class="processItem">
             <img src="../../images/workflowTitle_wev8.png" alt="" />

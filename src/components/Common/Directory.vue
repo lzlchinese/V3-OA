@@ -13,7 +13,7 @@
 import { ref } from "vue";
 
 defineProps({
-  directoryList: Array
+  directoryList: Array,
 });
 </script>
 
