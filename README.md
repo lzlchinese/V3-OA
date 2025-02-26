@@ -279,6 +279,29 @@ const getPermanentform = (data) => {
 };
 ```
 
+也可以使用下面这种方式
+```
+// 父组件
+import { provide } from 'vue';
+
+export default {
+  setup() {
+    provide('message', 'Hello from parent');
+  }
+}
+
+// 子组件
+
+import { inject } from 'vue';
+
+export default {
+  setup() {
+    const message = inject('message');
+    console.log(message); // Hello from parent
+  }
+}
+```
+
 4. 路由跳转
 
 ```javascript
