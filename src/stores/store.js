@@ -1,17 +1,29 @@
 import { defineStore } from "pinia";
 
-export const useCounterStore = defineStore("loginState", {
-  state: () => {
-    return { level: 0 };
+export const useStore = defineStore("store", {
+  state: () => ({
+    level: null,
+  }),
+  getters: {
+    getLevel: (state) => {
+      return state.level;
+    }
   },
-  // getters: {
-  //   doubleCount: (state) => {
-  //     return state.count * 2;
-  //   }
-  // },
   actions: {
     setLevel(nV) {
       this.level = nV;
+    },
+  },
+  // 启用持久化
+  persist: {
+    key: 'store', // 存储的 key
+    storage: sessionStorage, // 使用 sessionStorage 代替 localStorage
+    paths: ['level'], // 只持久化 level 字段
+    beforeRestore(ctx) {
+      console.log('Before restore:', ctx);
+    },
+    afterRestore(ctx) {
+      console.log('After restore:', ctx);
     },
   },
 });

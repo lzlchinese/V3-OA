@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from "vue";
-import { useCounterStore } from "../stores/store";
+import { useStore } from "../stores/store";
 import { useRouter } from "vue-router";
 import { ElMessage } from "element-plus";
 
@@ -8,7 +8,7 @@ const username = ref("");
 const password = ref("");
 
 const router = useRouter();
-const level = useCounterStore();
+const store = useStore();
 
 defineProps({});
 
@@ -22,10 +22,15 @@ function goToPortal() {
     return;
   }
   if (username.value === "liuzl") {
-    level.setLevel(1);
+    store.setLevel(1);
+    localStorage.setItem('token', '1')
+    localStorage.setItem('role', 'admin')
   } else {
-    level.setLevel(0);
+    store.setLevel(0);
+    localStorage.setItem('token', '2')
+    localStorage.setItem('role', 'users')
   }
+
   router.push("/Home");
 }
 </script>
@@ -33,22 +38,14 @@ function goToPortal() {
 <template>
   <div class="login">
     <div class="login-content">
-      <h1 class="title">{{ "富士通（南京）软件技术有限公司" }}</h1>
+      <h1 class="title">{{ "XXX软件技术有限公司" }}</h1>
       <div class="username">
         <div class="username-icon icon"></div>
-        <el-input
-          v-model="username"
-          class="username-input"
-          placeholder="用户"
-        ></el-input>
+        <el-input v-model="username" class="username-input" placeholder="用户"></el-input>
       </div>
       <div class="password">
         <div class="password-icon icon"></div>
-        <el-input
-          v-model="password"
-          class="username-input"
-          placeholder="密码"
-        ></el-input>
+        <el-input v-model="password" class="username-input" placeholder="密码"></el-input>
       </div>
       <Button class="login-button" @click="goToPortal">登录</Button>
     </div>
@@ -63,6 +60,7 @@ function goToPortal() {
   height: 100%;
   overflow: hidden;
 }
+
 .login-content {
   max-width: 1200px;
   position: relative;
@@ -70,14 +68,17 @@ function goToPortal() {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .read-the-docs {
   color: #888;
 }
+
 .title {
   font-size: 35px;
   color: #fff;
   text-align: center;
 }
+
 .username,
 .password {
   background: url("src/images/input_wev8.png") center no-repeat;
@@ -87,12 +88,15 @@ function goToPortal() {
   width: 280px;
   position: relative;
 }
+
 .username-icon {
   background: url("src/images/username_wev8.png") no-repeat;
 }
+
 .password-icon {
   background: url("src/images/password_wev8.png") no-repeat;
 }
+
 .icon {
   position: absolute;
   background-size: 20px 20px;
@@ -101,6 +105,7 @@ function goToPortal() {
   top: 24px;
   left: 24px;
 }
+
 .username-input {
   width: 60%;
   position: absolute;
@@ -108,20 +113,25 @@ function goToPortal() {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 ::v-deep .username-input .el-input__wrapper {
   background: transparent;
   border: none;
   box-shadow: none;
 }
+
 ::v-deep .username-input .el-input__wrapper .el-input__inner {
   color: #fff;
 }
+
 ::v-deep .username-input .el-input__wrapper .el-input__inner::placeholder {
   color: #666;
 }
+
 .username-input:focus-visible {
   outline: none;
 }
+
 .login-button {
   background: url("src/images/btn_login_wev8.png") center center no-repeat;
   height: 45px;
