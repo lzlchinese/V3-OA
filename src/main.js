@@ -14,9 +14,11 @@ import locale from "element-plus/es/locale/lang/zh-cn";
 import router from "../router";
 // 导入全局样式文件
 import "./assets/styles/common.css";
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
 
 const app = createApp(App);
 const pinia = createPinia();
+pinia.use(piniaPluginPersistedstate);
 
 app.use(pinia);
 app.use(ElementPlus, { locale });

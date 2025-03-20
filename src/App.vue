@@ -1,12 +1,7 @@
-<script setup>
-import Login from "./components/Login.vue";
-import Home from "./components/Home.vue";
-</script>
+<script setup></script>
 
 <template>
   <div class="login-body">
-    <!-- <Login v-if="$route.path === '/'" />
-    <Home v-else /> -->
     <router-view />
   </div>
 </template>

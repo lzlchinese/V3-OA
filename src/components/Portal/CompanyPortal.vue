@@ -5,7 +5,10 @@ import CardTitle from "../Common/CardTitle.vue";
 import Directory from "../Common/Directory.vue";
 import moment from "moment";
 import axios from "../../axios/axios";
+import { useStore } from "@/stores/store.js";
+
 const router = useRouter();
+const store = useStore();
 
 defineProps({});
 

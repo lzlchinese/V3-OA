@@ -32,8 +32,6 @@
 <script lang="ts" setup>
 import { ref, watch } from "vue";
 import { useRouter, useRoute } from "vue-router";
-import { useCounterStore } from "../stores/store";
-const level = useCounterStore();
 
 const router = useRouter();
 const route = useRoute();
