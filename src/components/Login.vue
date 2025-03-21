@@ -23,12 +23,12 @@ function goToPortal() {
   }
   if (username.value === "liuzl") {
     store.setLevel(1);
-    localStorage.setItem('token', '1')
-    localStorage.setItem('role', 'admin')
+    localStorage.setItem("token", "1");
+    localStorage.setItem("role", "admin");
   } else {
     store.setLevel(0);
-    localStorage.setItem('token', '2')
-    localStorage.setItem('role', 'users')
+    localStorage.setItem("token", "2");
+    localStorage.setItem("role", "users");
   }
 
   router.push("/Home");
@@ -41,11 +41,19 @@ function goToPortal() {
       <h1 class="title">{{ "XXX软件技术有限公司" }}</h1>
       <div class="username">
         <div class="username-icon icon"></div>
-        <el-input v-model="username" class="username-input" placeholder="用户"></el-input>
+        <el-input
+          v-model="username"
+          class="username-input"
+          placeholder="用户"
+        ></el-input>
       </div>
       <div class="password">
         <div class="password-icon icon"></div>
-        <el-input v-model="password" class="username-input" placeholder="密码"></el-input>
+        <el-input
+          v-model="password"
+          class="username-input"
+          placeholder="密码"
+        ></el-input>
       </div>
       <Button class="login-button" @click="goToPortal">登录</Button>
     </div>
